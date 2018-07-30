@@ -1,0 +1,59 @@
+<super>
+  <version>1.1</version>
+  <meta>
+    <artist/>
+    <title>MNEK x Disclosure x XYconstant</title>
+    <beats_in_measure>4</beats_in_measure>
+    <BPM>126</BPM>
+    <key>C</key>
+    <YouTubeID>TNuHFc1jxi4</YouTubeID>
+    <mode>6</mode>
+    <band>
+      <lead>
+        <member>
+          <name>Piano</name>
+          <velocity>0.8</velocity>
+          <octaveOffset>0</octaveOffset>
+          <mute>false</mute>
+        </member>
+      </lead>
+      <harmony>
+        <member>
+          <name>Piano 1/4s</name>
+          <velocity>0.8</velocity>
+          <octaveOffset>0</octaveOffset>
+          <mute>false</mute>
+        </member>
+      </harmony>
+      <bass>
+        <member>
+          <name>Piano Bass Dotted</name>
+          <velocity>0.8</velocity>
+          <octaveOffset>0</octaveOffset>
+          <mute>false</mute>
+        </member>
+      </bass>
+      <drums/>
+    </band>
+    <sections>
+      <_Chorus>
+        <global_start>66.86</global_start>
+        <section_duration>18.82</section_duration>
+        <active_start>1.88</active_start>
+        <active_stop>16.93</active_stop>
+      </_Chorus>
+    </sections>
+  </meta>
+  <sections>
+    <_Chorus>
+      <segment>
+        <instrument/>
+        <rhythm/>
+        <lyrics/>
+        <notes/>
+        <chords/>
+        <numMeasures>8</numMeasures>
+      </segment>
+    </_Chorus>
+  </sections>
+</super>
