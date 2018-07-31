@@ -5,12 +5,13 @@ import time
 import json
 # import string
 
-
 website = 'https://www.hooktheory.com'
 base_url = website + '/theorytab/artists/'
 sleep_time = 0.11
 # alphabet_list = string.ascii_lowercase
 alphabet_list = 'x'
+root_dir = '../datasets'
+root_xml = '../datasets/xml'
 
 
 def song_retrieval(artist, song, path_song):
@@ -139,24 +140,31 @@ def traverse_website():
     archive_artist['num_song'] = song_count
     archive_artist['num_artist'] = artist_count
 
-    with open('archive_artist.json', "w") as f:
-        json.dump(archive_artist, f)
+    return archive_artist
 
 
 if __name__ == '__main__':
 
-    traverse_website()
+    archive_artist = traverse_website()
 
-    # root for crawled dataset
-    root_dir = 'dataset/xml'
-    with open('archive_artist.json', "r") as f:
+    if not os.path.exists(root_dir):
+        os.makedirs(root_dir)
+
+    if not os.path.exists(root_xml):
+        os.makedirs(root_xml)
+
+    path_artists = os.path.join(root_dir, 'archive_artist.json')
+    with open(path_artists, "w") as f:
+        json.dump(archive_artist, f)
+
+    with open(path_artists, "r") as f:
         archive_artist = json.load(f)
 
     count_ok = 0
     song_count = archive_artist['num_song']
 
     for ch in alphabet_list:
-        path_ch = os.path.join(root_dir, ch)
+        path_ch = os.path.join(root_xml, ch)
         print('==[%c]=================================================' % ch)
 
         if not os.path.exists(path_ch):

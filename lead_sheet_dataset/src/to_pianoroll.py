@@ -1,12 +1,8 @@
 import os
 import pretty_midi
 import pypianoroll
-import numpy as np
-import matplotlib.pyplot as plt
-from parser import proc_xml
-from lookup_tables import NOTE_TO_OFFSET
-from roman_to_symbol import reset_chord_basic, to_chromagram, proc_roman_to_symbol
-
+from src.lookup_tables import NOTE_TO_OFFSET
+from src.roman_to_symbol import reset_chord_basic, to_chromagram
 
 octave_melody = 5
 root_heigest_note = 53
@@ -68,15 +64,16 @@ def wrapping_chord(chord_events, beats_sec, to_chroma=False):
         comp = to_chromagram(chord['composition']) if to_chroma else chord['composition']
 
         # shift to lowest root location (from 0)
-        re_arr = np.min(comp) // 12
+        re_arr = chord['bass'] // 12
         comp = comp - re_arr * 12
+        bass = chord['bass'] - re_arr * 12
 
         # event_on/off
         start = chord['event_on'] * beats_sec
         end = chord['event_off'] * beats_sec
 
         # determine the initial location
-        loc = init_chord + chord['bass']
+        loc = init_chord + bass
         init_chord_ = (init_chord - 12) if loc > root_heigest_note else init_chord
 
         symbol = chord['symbol']
@@ -101,6 +98,9 @@ def proc_to_midi(
         name='test'):
 
     bpm = float(bpm)
+    if bpm == 0.0:
+        bpm = 120
+
     beats_in_measure = int(beats_in_measure)
     lead_sheet = pretty_midi.PrettyMIDI(initial_tempo=bpm)
     beats_sec = 60.0 / bpm

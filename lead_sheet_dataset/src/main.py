@@ -9,10 +9,11 @@ from roman_to_symbol import proc_roman_to_symbol
 from to_pianoroll import proc_event_to_midi, proc_midi_to_pianoroll
 plt.switch_backend('agg')
 
-root_xml = 'dataset/xml'
-root_event = 'dataset/event'
-root_pianoroll = 'dataset/pianoroll'
-log_dir = 'log'
+root_dir = '../datasets'
+root_xml = '../datasets/xml'
+root_event = '../datasets/event'
+root_pianoroll = '../datasets/pianoroll'
+log_dir = '../analysis/log'
 
 
 def traverse_dir(root_dir, extension='.xml', is_pure=True):
@@ -45,7 +46,7 @@ def proc(xml_list, index=0):
     num_xml = len(xml_list)
 
     if not os.path.exists(log_dir):
-            os.makedirs(log_dir)
+        os.makedirs(log_dir)
     log = open(os.path.join(log_dir, 'log_'+str(index)+'.txt'), 'w')
 
     cnt_ok = 1
@@ -109,7 +110,7 @@ def proc(xml_list, index=0):
 
             cnt_ok += 1
         except Exception as e:
-            error_handler(e, url, log)
+            error_handler(e, url, log, current)
 
     print('Done!!!')
     log.close()
@@ -117,21 +118,21 @@ def proc(xml_list, index=0):
 
 
 if __name__ == '__main__':
-    queue = mp.Queue()
+
     xml_list = traverse_dir(root_xml)
 
-    with open('xml_list.json', "w") as f:
+    with open(os.path.join(root_dir, 'xml_list.json'), "w") as f:
         json.dump(xml_list, f)
 
-    with open('xml_list.json', "r") as f:
+    with open(os.path.join(root_dir, 'xml_list.json'), "r") as f:
         xml_list = json.load(f)
 
     # dynamic multi-process
+    queue = mp.Queue()
     processes = []
     amount = len(xml_list)
-    # n_cpu = mp.cpu_count()
-    n_cpu = 2
-
+    # n_cpu = mp.cpu_count()  # number of core
+    n_cpu = 3
     amount_batch = math.ceil(amount/n_cpu)
     print('cpu count: %d, batch size: %d, total: %d' % (n_cpu, amount_batch, amount))
 

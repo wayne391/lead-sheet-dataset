@@ -188,17 +188,3 @@ def proc_dir(file_list, root):
         save_path = root
         name = os.path.basename(file_path)
         proc_xml(file_path, save_path=save_path, name=name, save_type='json')
-
-
-if __name__ == '__main__':
-    # process one folder
-    root_xml = 'archive'
-    root_event_degree = 'event_degree'
-
-    file_list = traverse_dir(root_xml, '.xml')
-    proc_dir(file_list, root_event_degree)
-
-    # process only one file
-    # file_path = 'archive/feist_secret_heart_verse.xml'
-    # raw_info = proc_xml(file_path)
-    # print(raw_info)
