@@ -22,20 +22,18 @@ In event-based works, when analyzing 'chords', there are two common approaches: 
 The pianorolls and corresponding midi files are rendered afterwards. When transforming notations into scores, the voicing or the arrangement is also an **art**. Here, I only adopt some simple polices (ex: omit 5 in 9-th chords). Users can get desired resultsby comstomized the functions.
 
 In summary, there are two major folers:
-* [event]  <br>
-    suffix:<br>
+* [event] <br>
     * 'roman_key': roman, original key
     * 'roman_nokey': roman, C key
     * 'symbol_key': symbol, original key
     * 'symbol_nokey': symbol, C key
 
-* [pianoroll]
-    suffix:
+* [pianoroll] <br>
     * key: original key (with midi)
     * no key: C key (with midi)
     The .npz file and the figure is from **'no key'**
 
-Sample Pianoroll:
+**Sample Pianoroll:**
 ![image](https://github.com/wayne391/List-of-Symbolic-Musical-Datasets/blob/master/docs/hey_jude_chorus.PNG)
 
 ---------
