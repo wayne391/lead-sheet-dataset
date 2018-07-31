@@ -1,4 +1,69 @@
-# Lead-Sheet-Analysis
-processing, generation and analysis
+# Lead-Sheet-Dataset
+
+Collection of lead sheets in three different formats. The following diagram illustrates the diagram of processing:
 
 ![image](https://github.com/wayne391/Lead-Sheet-Analysis/blob/master/docs/diagram.PNG)
+
+The source of the current dataset is from [Theorytab]. However, under this framework, users can easily extend this dataset by incorporating other resources. Note taht all utilities and resources are only for **academic** purposes.
+
+
+## Formats for Symbolic Domain Analysis
+In symbolic domain researches, there are two common formats to represent music: events and pinorolls.
+* Event <br>
+    a list of event tuples <br>
+    ***(tag, event_on, event_off) or (tag, event_on, duration)***
+
+
+* Pianoroll <br>
+    a tensor whose size is ***timesteps x pitches***
+
+In event-based works, when analyzing 'chords', there are two common approaches: [Roman Analysis] (roman) or [Chord Names and Symbols] (symbol). The former one is usually used for music theorists  or students to analyze the harmony of pieces, and the latter one is frequently used in pop music. Fortunately, [Theorytab] has abundant chord notations in roman, so applying some transformationa, we can get two different notatinos for further researches.
+
+The pianorolls and corresponding midi files are rendered afterwards. When transforming notations into scores, the voicing or the arrangement is also an **art**. Here, I only adopt some simple polices (ex: omit 5 in 9-th chords). Users can get desired resultsby comstomized the functions.
+
+In summary, there are two major folers:
+* [event]  <br>
+    suffix:<br>
+    * 'roman_key': roman, original key
+    * 'roman_nokey': roman, C key
+    * 'symbol_key': symbol, original key
+    * 'symbol_nokey': symbol, C key
+
+* [pianoroll]
+    suffix:
+    * key: original key (with midi)
+    * no key: C key (with midi)
+    The .npz file and the figure is from **'no key'**
+
+Sample Pianoroll:
+![image](https://github.com/wayne391/List-of-Symbolic-Musical-Datasets/blob/master/docs/hey_jude_chorus.PNG)
+
+---------
+
+## How to Create the Dataset
+
+```bash
+
+cd lead_sheet_dataset/src
+python theorytab_crawler.py
+python main.py
+```
+The generated data will be placed at 'datasets' folder.
+For sanity check, you can refer to notebooks to test every individual file.
+
+
+
+---------
+
+## How to Incorporate Other Resources
+
+Current accessible resources of lead sheets are almost in symbol format. Users can use 'to_pianoroll.py' to do the conversion. Please be sure the format is identical.
+
+
+
+[Theorytab]:https://www.hooktheory.com/site
+[Roman analysis]:https://en.wikipedia.org/wiki/Roman_numeral_analysis
+[chord names and symbols]:https://en.wikipedia.org/wiki/Chord_names_and_symbols_(popular_music)
+[event]:https://github.com/wayne391/Lead-Sheet-Analysis/tree/master/lead_sheet_dataset/datasets/event/
+[pianoroll]:https://github.com/wayne391/Lead-Sheet-Analysis/tree/master/lead_sheet_dataset/datasets/pianoroll/
+[notebooks]:https://github.com/wayne391/Lead-Sheet-Analysis/tree/master/lead_sheet_dataset/notebooks
