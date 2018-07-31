@@ -1,8 +1,8 @@
 import os
 import pretty_midi
 import pypianoroll
-from src.lookup_tables import NOTE_TO_OFFSET
-from src.roman_to_symbol import reset_chord_basic, to_chromagram
+from lookup_tables import NOTE_TO_OFFSET
+from roman_to_symbol import reset_chord_basic, to_chromagram
 
 octave_melody = 5
 root_heigest_note = 53

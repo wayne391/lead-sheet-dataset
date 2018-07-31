@@ -3,7 +3,7 @@ import math
 import json
 import time
 import multiprocessing as mp
-from parser import proc_xml
+from tab_parser import proc_xml
 import matplotlib.pyplot as plt
 from roman_to_symbol import proc_roman_to_symbol
 from to_pianoroll import proc_event_to_midi, proc_midi_to_pianoroll

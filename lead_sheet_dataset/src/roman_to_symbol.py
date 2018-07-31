@@ -3,7 +3,7 @@ import json
 import copy
 import pickle
 import numpy as np
-from src.lookup_tables import VAL_TO_NAME, KEY_TO_SCALE, MODE_TO_KEY, NOTE_TO_OFFSET, ACCIDENTAL_DICT
+from lookup_tables import VAL_TO_NAME, KEY_TO_SCALE, MODE_TO_KEY, NOTE_TO_OFFSET, ACCIDENTAL_DICT
 from collections import OrderedDict
 
 
