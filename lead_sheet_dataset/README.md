@@ -29,6 +29,7 @@ In summary, there are two major folers:
     * 'symbol_nokey': symbol, C key
 
 * [pianoroll] <br>
+    beat resoulution is **24**
     * key: original key (with midi)
     * no key: C key (with midi)
     The .npz file and the figure is from **'no key'**
