@@ -29,10 +29,9 @@ In summary, there are two major folers:
     * 'symbol_nokey': symbol, C key
 
 * [pianoroll] <br>
-    beat resoulution is **24**
     * key: original key (with midi)
     * no key: C key (with midi)
-    The .npz file and the figure is from **'no key'**
+    The .npz file and the figure is from **'no key'**. The beat resolution is 24 for all pianorolls.
 
 **Sample Pianoroll:**
 ![image](https://github.com/wayne391/List-of-Symbolic-Musical-Datasets/blob/master/docs/hey_jude_chorus.PNG)
