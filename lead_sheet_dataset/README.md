@@ -49,8 +49,10 @@ python main.py
 The generated data will be placed at 'datasets' folder.
 For sanity check, you can refer to notebooks to test every individual file.
 
-
-
+#### *Latest Update: 2018/8/1*
+* **4956 artists**
+* **11380 songs**
+* **18843 succesfully parsed files in 18986 sections**
 ---------
 
 ## How to Incorporate Other Resources
