@@ -30,7 +30,7 @@ In summary, there are two major folers:
 
 * [pianoroll] <br>
     * key: original key (with midi)
-    * no key: C key (with midi)
+    * no key: C key (with midi) 
     The .npz file and the figure is from **'no key'**. The beat resolution is 24 for all pianorolls.
 
 **Sample Pianoroll:**
