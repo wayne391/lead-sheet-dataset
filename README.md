@@ -1,6 +1,10 @@
 # Lead-Sheet-Dataset
 
 Collection of lead sheets in three different formats. The following diagram illustrates the diagram of processing:
+#### *Latest Update:*
+* ***Codes: 2018/10/21***
+* ***Sample Dataset: 2018/8/1***
+
 
 ![image](https://github.com/wayne391/Lead-Sheet-Analysis/blob/master/docs/diagram.PNG)
 
@@ -50,7 +54,6 @@ python main.py
 The generated data will be placed at 'datasets' folder.
 For sanity check, you can refer to notebooks to test every individual file.
 
-#### *Latest Update: 2018/8/1*
 * **4956 artists**
 * **11380 songs**
 * **18843 succesfully parsed files in 18986 sections**
