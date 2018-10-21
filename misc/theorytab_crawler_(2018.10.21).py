@@ -3,8 +3,7 @@ from bs4 import BeautifulSoup
 import os
 import time
 import json
-import re
-import string
+# import string
 
 website = 'https://www.hooktheory.com'
 base_url = website + '/theorytab/artists/'
@@ -17,14 +16,20 @@ root_xml = '../datasets/xml'
 
 def song_retrieval(artist, song, path_song):
 
-    suffix = '/theorytab/view/' + artist + '/' + song
-    song_url = song_url = 'https://www.hooktheory.com' + suffix
+    song_url = 'https://www.hooktheory.com/theorytab/view/' + artist + '/' + song
     response_song = requests.get(song_url)
 
     soup = BeautifulSoup(response_song.text, 'html.parser')
+    li_list = soup.findAll("li", {"role": "presentation"})
 
-    section_list = [item['href'].split('#')[-1] for item in soup.find_all('a', {'href': re.compile(suffix+'#')})]
-    pk_list = [item['href'].split('/')[-1] for item in soup.find_all('a', {'href': re.compile("/theorytab/chords/pk/")})]
+    section_list = []
+    pk_list = []
+
+    # section
+    for i in range(len(li_list)-1):
+        sec = li_list[i].text.strip().lower().replace(" ", "-")
+        section_list.append(sec)
+        pk_list.append(soup.findAll("div", {"role": "tabpanel", "id": sec})[0].contents[0]['id'])
 
     # save xml
     for idx, pk in enumerate(pk_list):
@@ -56,11 +61,11 @@ def song_retrieval(artist, song, path_song):
 def get_song_list(url_artist, quite=False):
     response_tmp = requests.get(website + url_artist)
     soup = BeautifulSoup(response_tmp.text, 'html.parser')
-    item_list = soup.find_all("li", {"class": re.compile("overlay-trigger")})
+    item_list = soup.find_all("li", {"class": "grid-item"})
 
     song_name_list = []
     for item in item_list:
-        song_name = item.find_all("a", {"class": "a-no-decoration"})[0]['href'].split('/')[-1]
+        song_name = item.find_all("a", {"class": "a-tab-cover"})[0]['href'].split('/')[-1]
         song_name_list.append(song_name)
         if not quite:
             print('   > %s' % song_name)
@@ -90,19 +95,20 @@ def traverse_website():
         url_artist_list = []
         for page in range(1, 9999):
             url = 'https://www.hooktheory.com/theorytab/artists/'+ch+'?page=' + str(page)
-            print(url)
+
             time.sleep(sleep_time)
             response_tmp = requests.get(url)
             soup = BeautifulSoup(response_tmp.text, 'html.parser')
-            item_list = soup.find_all("li", {"class": re.compile("overlay-trigger")})
+            item_list = soup.find_all("li", {"class": "grid-item"})
 
             if item_list:
+                print(url)
                 page_count += 1
             else:
                 break
 
             for item in item_list:
-                url_artist_list.append(item.find_all("a", {"class": "a-no-decoration"})[0]['href'])
+                url_artist_list.append(item.find_all("a", {"class": "a-tab-cover"})[0]['href'])
 
         print('Total:', len(url_artist_list))
 
@@ -160,7 +166,7 @@ if __name__ == '__main__':
     for ch in alphabet_list:
         path_ch = os.path.join(root_xml, ch)
         print('==[%c]=================================================' % ch)
-        
+
         if not os.path.exists(path_ch):
             os.makedirs(path_ch)
 
