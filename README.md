@@ -1,6 +1,6 @@
 # Lead-Sheet-Dataset
 
-Collection of lead sheets in three different formats. The following diagram illustrates the diagram of processing:
+Collection of lead sheets in three different formats. The following diagram illustrates the process and available formats:
 #### *Latest Update:*
 * ***Codes: 2018/10/21***
 * ***Sample Dataset: 2018/8/1***
