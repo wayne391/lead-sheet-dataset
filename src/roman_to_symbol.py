@@ -311,6 +311,8 @@ def chord_parser(chord, mode, key_offset):
 
     # add shift from secondary chords
     comp = (comp + sec_offset)
+    # shift scale upwards for sus and emb
+    scale = [s+sec_offset for s in scale]
 
     # set compvec (for sus/add/omit)
     comp_vec = comp_to_compvec(comp)
