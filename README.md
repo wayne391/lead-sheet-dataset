@@ -8,7 +8,7 @@ Collection of lead sheets in three different formats. The following diagram illu
 
 ![image](https://github.com/wayne391/Lead-Sheet-Analysis/blob/master/docs/diagram.PNG)
 
-The source of the current dataset is from [Theorytab]. However, under this framework, users can easily extend this dataset by incorporating other resources. Note taht all utilities and resources are only for **academic** purposes.
+The source of the current dataset is from [Theorytab]. However, under this framework, users can easily extend this dataset by incorporating other resources. All utilities and resources are only for **academic** purposes.
 
 
 ## Formats for Symbolic Domain Analysis
