@@ -1,11 +1,13 @@
 # Lead-Sheet-Dataset
+The collection of lead sheets in three different formats. 
 
-Collection of lead sheets in three different formats. The following diagram illustrates the process and available formats:
 #### *Latest Update:*
 * ***Codes: 2018/10/21***
 * ***Sample Dataset: 2018/8/1***
 
+***Source:*** [Link](https://drive.google.com/file/d/13iB5Brk1hypKsw9TSf8_d4Ka3xU0XmFZ/view?usp=sharing)
 
+The following diagram illustrates the process and available formats:
 ![image](https://github.com/wayne391/Lead-Sheet-Analysis/blob/master/docs/diagram.PNG)
 
 The source of the current dataset is from [Theorytab]. However, under this framework, users can easily extend this dataset by incorporating other resources. All utilities and resources are only for **academic** purposes.
