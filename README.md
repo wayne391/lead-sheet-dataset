@@ -5,7 +5,8 @@ The collection of lead sheets in three different formats.
 * ***Codes: 2018/10/21***
 * ***Sample Dataset: 2018/8/1***
 
-***Source:*** [Link](https://drive.google.com/file/d/13iB5Brk1hypKsw9TSf8_d4Ka3xU0XmFZ/view?usp=sharing) (4.9 G)
+***Source:*** [Link](https://drive.google.com/file/d/13iB5Brk1hypKsw9TSf8_d4Ka3xU0XmFZ/view?usp=sharing) (4.9 G).  
+***MIDI***: [Link](https://drive.google.com/file/d/1K1t8L9IRTHnQ1ozRIMRGEyxk_yhN6kLr/view?usp=sharing) (11 MB)
 
 The following diagram illustrates the process and available formats:
 ![image](https://github.com/wayne391/Lead-Sheet-Analysis/blob/master/docs/diagram.PNG)
