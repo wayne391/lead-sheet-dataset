@@ -44,6 +44,14 @@ In summary, there are two major folers:
 **Sample Pianoroll:**
 ![image](https://github.com/wayne391/List-of-Symbolic-Musical-Datasets/blob/master/docs/hey_jude_chorus.PNG)
 
+
+---------
+## Citation
+
+```
+Yin-Cheng Yeh, Wen-Yi Hsiao, Satoru Fukayama, Tetsuro Kitahara, Benjamin Genchel, Hao-Min Liu, Hao-Wen Dong, Yian Chen, Terence Leong, and Yi-Hsuan Yang, "Automatic melody harmonization with triad chords: A comparative study," Journal of New Music Research (JNMR), vol. 50, no. 1, pp. 37-51, Feb 2021.
+```
+
 ---------
 
 ## How to Create the Dataset
@@ -74,3 +82,6 @@ Current accessible resources of lead sheets are almost in symbol format. Users c
 [event]:https://github.com/wayne391/Lead-Sheet-Analysis/tree/master/lead_sheet_dataset/datasets/event/
 [pianoroll]:https://github.com/wayne391/Lead-Sheet-Analysis/tree/master/lead_sheet_dataset/datasets/pianoroll/
 [notebooks]:https://github.com/wayne391/Lead-Sheet-Analysis/tree/master/lead_sheet_dataset/notebooks
+
+
+
