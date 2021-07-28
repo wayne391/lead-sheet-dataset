@@ -49,7 +49,14 @@ In summary, there are two major folers:
 ## Citation
 
 ```
-Yin-Cheng Yeh, Wen-Yi Hsiao, Satoru Fukayama, Tetsuro Kitahara, Benjamin Genchel, Hao-Min Liu, Hao-Wen Dong, Yian Chen, Terence Leong, and Yi-Hsuan Yang, "Automatic melody harmonization with triad chords: A comparative study," Journal of New Music Research (JNMR), vol. 50, no. 1, pp. 37-51, Feb 2021.
+@article{ahu61,
+   author={Yin-Cheng Yeh, Wen-Yi Hsiao, Satoru Fukayama, Tetsuro Kitahara, Benjamin Genchel, Hao-Min Liu, Hao-Wen Dong, Yian Chen, Terence Leong, and Yi-Hsuan Yang, },
+   title={Automatic melody harmonization with triad chords: A comparative study},
+   journal={Journal of New Music Research (JNMR)},
+   volume={50},
+   year=2021,
+   pages={37-51}
+}
 ```
 
 ---------
