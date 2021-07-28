@@ -54,7 +54,8 @@ In summary, there are two major folers:
    title={Automatic melody harmonization with triad chords: A comparative study},
    journal={Journal of New Music Research (JNMR)},
    volume={50},
-   year=2021,
+   number={1},
+   year={2021},
    pages={37-51}
 }
 ```
